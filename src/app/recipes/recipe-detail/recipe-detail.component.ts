@@ -19,9 +19,10 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit(): void {
   }
   sendToShoppingList(ingredients: Ingredient[]) {
-    for (let i = 0; i < ingredients.length; i++) {
-      this.shoppingListService.addIngredient(ingredients[i]);
-    }
+    // for (let i = 0; i < ingredients.length; i++) {
+    //   this.shoppingListService.addIngredient(ingredients[i]);
+    // }
+    this.shoppingListService.addMultipleIngredients(ingredients);
     this.shoppingListService.ingredientsChanged.subscribe(
       (ingredients: Ingredient[]) => {
         this.ingredients = ingredients;
